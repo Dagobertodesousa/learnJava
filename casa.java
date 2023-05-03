@@ -4,12 +4,12 @@ import javax.swing.JOptionPane;
 class casa
 {
     double area, perimetro;
-    String rua, telhado;
+    String rua, telhado, lerGrafico;
     boolean porta, portao, janela;
     int numero;
+    Object[] figure = {"quadrado", "retangulo", "triangulo", "circulo", "lozango", "elipse", "trapezio"};
     
     Scanner lerTexto = new Scanner(System.in);
-    String lerGrafico;
 
     // modo de entrada de dados por texto - console -
 
@@ -85,7 +85,40 @@ void imprimirTexto(){
         lerGrafico = JOptionPane.showInputDialog("numero: ");
         numero = Integer.parseInt(lerGrafico);
     }
+    void seletorFigura(){
+        String seletor = (String) JOptionPane.showInputDialog(
+            null,
+            "Selecione a figura geometrica:",
+            "Seletor",
+            JOptionPane.PLAIN_MESSAGE,
+            null,
+            figure,
+            "circulo");
 
+        switch (seletor){
+            case "quadrado":
+                JOptionPane.showMessageDialog(null, "Area do quadrado é dada por Base x Altura");
+                break;
+            case "retangulo":
+                JOptionPane.showMessageDialog(null, "Area do retangulo é dada por Base x Altura");
+                break;
+            case "triangulo":
+                JOptionPane.showMessageDialog(null, "Area do triangulo é dada por Base x Altura dividido por 2");
+                break;
+            case "lozango":
+                JOptionPane.showMessageDialog(null, "Area do lozango é dada por Base x Altura");
+                break;
+            case "circulo":
+                JOptionPane.showMessageDialog(null, "Area do circulo é dada por pi x raio²");
+                break;
+            case "trapezio":
+                JOptionPane.showMessageDialog(null, "Area do trapezio é dada por Base menor + Base maior x Altura dividido por 2");
+                break;
+            case "elipse":
+                JOptionPane.showMessageDialog(null, "Area da elipse só pode ser dada por Deus");
+                break;
+        }
+    }
 // ------------------------------------------------------------
     void imprimirGrafico(){
         JOptionPane.showMessageDialog(null, "a casa de numero: " + numero + " logradouro: " + rua + " de area: " + area + "m² e perimetro: " + perimetro + "m com telhado, tipo: " + telhado + " porta " + porta + " e portão " + portao + " e janela " + janela);
