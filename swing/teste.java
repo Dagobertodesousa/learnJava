@@ -1,4 +1,5 @@
-class teste extends casa
+package swing;
+class teste
 {
     public static void main(String[] args)
     {

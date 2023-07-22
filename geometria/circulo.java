@@ -1,18 +1,18 @@
 package geometria;
 
-abstract class circulo {
-    double raio, largura;
+class circulo {
+    public double raio, largura;
 
-    double areaCirculo(){
-        double areaC = Math.PI * raio * raio;
+    public double areaCirculo(){
+        double areaC = Math.PI * this.raio * this.raio;
         return areaC;
     }
-    double circunferencia(){
-        double circun = Math.PI * raio * 2;
+    public double circunferencia(){
+        double circun = Math.PI * this.raio * 2;
         return circun;
     }
-    double volume(){
-        double vol = areaCirculo() * largura;
+    public double volume(){
+        double vol = this.areaCirculo() * this.largura;
         return vol;
     }
 }

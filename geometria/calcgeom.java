@@ -7,12 +7,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.swing.JOptionPane;
 
-class calcgeom{
+public class calcgeom{
     
     Date data = new Date(0);
     Object[] forma = {"quadrado", "retangulo", "triangulo", "circulo", "lozango", "elipse", 0, "trapezio"};
 
-    void seletorFigura(){
+    public void seletorFigura(){
         try {
             String seletor = (String) JOptionPane.showInputDialog(
                 null,
